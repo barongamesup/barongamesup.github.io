@@ -1,0 +1,13 @@
+# GitHub Pages build config.
+#
+# Jekyll already skips folders whose name starts with "_", but that is implicit
+# behaviour that disappears the moment someone adds a .nojekyll file. Listing the
+# exclusions explicitly means the template can never be served as a real page —
+# a public URL rendering "{{APP_NAME}} asks for your consent" would look broken
+# to anyone who found it, including Google's crawler.
+exclude:
+  - _template
+  - README.md
+
+# Nothing here needs Jekyll's templating; these are plain HTML files.
+plugins: []

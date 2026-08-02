@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Belt and braces: _config.yml already keeps the template out of the build, so
+# this path should not exist. If a future change ever republishes it, search
+# engines still will not index a page full of placeholders.
+Disallow: /_template/

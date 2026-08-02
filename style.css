@@ -1,0 +1,80 @@
+/* Shared styling for every Baron Mobile Games page.
+   One file so a policy added a year from now still matches the others. */
+
+:root {
+  color-scheme: light dark;
+  --ink: #1a1a1a;
+  --bg: #ffffff;
+  --muted: #6b7280;
+  --line: #d5d8dd;
+  --accent: #d9b400;
+  --link: #1a5fb4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e6e6e6;
+    --bg: #16181c;
+    --muted: #9aa1ab;
+    --line: #3a3f47;
+    --accent: #e7c81e;
+    --link: #8ab4f8;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+a { color: var(--link); }
+
+h1 { font-size: 1.9rem; margin-bottom: .25rem; line-height: 1.25; }
+h2 { font-size: 1.2rem; margin-top: 2.2rem; }
+
+.meta { color: var(--muted); font-size: .92rem; margin-top: 0; }
+
+.brand {
+  display: block;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  font-size: .8rem;
+  color: var(--accent);
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+}
+
+table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+th, td { border: 1px solid var(--line); padding: .5rem .6rem; text-align: left; vertical-align: top; }
+th { background: rgba(127, 127, 127, .12); }
+
+/* Wide tables scroll inside their own box instead of the page going sideways */
+.scroll { overflow-x: auto; }
+
+code {
+  background: rgba(127, 127, 127, .15);
+  padding: .1rem .3rem;
+  border-radius: 3px;
+  font-size: .9em;
+}
+
+.games { list-style: none; padding: 0; margin: 1.5rem 0 0; }
+.games li { border: 1px solid var(--line); border-radius: 10px; padding: 1rem 1.1rem; margin-bottom: .75rem; }
+.games h3 { margin: 0 0 .2rem; font-size: 1.05rem; }
+.games p { margin: 0 0 .5rem; color: var(--muted); font-size: .95rem; }
+.games a { font-size: .92rem; }
+
+footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .9rem;
+}
