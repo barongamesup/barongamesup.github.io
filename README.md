@@ -37,6 +37,21 @@ Live at <https://barongamesup.github.io/>.
    - AdMob → Apps → *app* → App settings → Privacy policy URL
    - Play Console → Store listing → Privacy policy
 
+## app-ads.txt
+
+`app-ads.txt` at the site root declares which ad systems may sell this
+publisher's app inventory. It is an IAB anti-fraud standard: without it many
+buyers will not bid, because they cannot tell real inventory from spoofed, so it
+shows up as a low fill rate rather than as an error.
+
+It is **per publisher, not per app** — one file covers every app whose Play
+listing points its developer website at this domain. Adding a new app needs no
+change here.
+
+The publisher id must match the AdMob account. AdMob crawls the file after the
+store listing is linked; if the two disagree, verification fails with "your
+information does not match".
+
 ## Why the URL matters
 
 AdMob refuses to publish a GDPR consent message while the app it targets has no
