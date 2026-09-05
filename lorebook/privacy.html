@@ -116,6 +116,7 @@
   <tr><td><code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code></td><td>Downloading advertisements</td></tr>
   <tr><td><code>AD_ID</code></td><td>Access to the advertising ID, used as described above</td></tr>
   <tr><td><code>VIBRATE</code></td><td>Short haptic feedback when you interact with the graph</td></tr>
+  <tr><td><code>WAKE_LOCK</code>, <code>FOREGROUND_SERVICE</code></td><td>Added by the Google advertising library so an advertisement can finish loading. They give no access to your data.</td></tr>
   <tr><td><code>READ_EXTERNAL_STORAGE</code>, <code>WRITE_EXTERNAL_STORAGE</code><br>(Android 12 and older only)</td><td>Declared by the file library the app is built on. LoreBook itself writes only inside its own private storage and hands backups to the system share sheet, so it never reads or writes your other files. On Android 13 and newer these permissions do not apply at all.</td></tr>
 </table>
 </div>
