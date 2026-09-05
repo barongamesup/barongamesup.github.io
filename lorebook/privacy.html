@@ -115,11 +115,13 @@
   <tr><th>Permission</th><th>Why</th></tr>
   <tr><td><code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code></td><td>Downloading advertisements</td></tr>
   <tr><td><code>AD_ID</code></td><td>Access to the advertising ID, used as described above</td></tr>
+  <tr><td><code>VIBRATE</code></td><td>Short haptic feedback when you interact with the graph</td></tr>
+  <tr><td><code>READ_EXTERNAL_STORAGE</code>, <code>WRITE_EXTERNAL_STORAGE</code><br>(Android 12 and older only)</td><td>Declared by the file library the app is built on. LoreBook itself writes only inside its own private storage and hands backups to the system share sheet, so it never reads or writes your other files. On Android 13 and newer these permissions do not apply at all.</td></tr>
 </table>
 </div>
 <p>
   The app does not request access to your contacts, camera, microphone, precise
-  location, photos or files.
+  location or photos.
 </p>
 
 <h2>Children</h2>
