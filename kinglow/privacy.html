@@ -142,15 +142,24 @@
 <table>
   <tr><th>Permission</th><th>Why</th></tr>
   <tr><td><code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code></td><td>Downloading advertisements</td></tr>
-  <tr><td><code>AD_ID</code></td><td>Access to the advertising ID, used by AdMob as described above</td></tr>
+  <tr><td><code>AD_ID</code>, <code>ACCESS_ADSERVICES_AD_ID</code>, <code>ACCESS_ADSERVICES_ATTRIBUTION</code>, <code>ACCESS_ADSERVICES_TOPICS</code></td><td>The advertising ID and the Android Privacy Sandbox interfaces, used by AdMob as described above</td></tr>
+  <tr><td><code>BIND_GET_INSTALL_REFERRER_SERVICE</code></td><td>Declared by Google Play services so the ad SDK can read how the app was installed</td></tr>
   <tr><td><code>VIBRATE</code></td><td>Haptic feedback</td></tr>
   <tr><td><code>READ_CONTACTS</code></td><td>Optional. Reading your contact list so you can pick people to add, as described above. Nothing is written back.</td></tr>
   <tr><td><code>POST_NOTIFICATIONS</code></td><td>Optional. Showing the local reminders you turn on in Settings</td></tr>
+  <tr><td><code>WAKE_LOCK</code>, <code>FOREGROUND_SERVICE</code>, <code>RECEIVE</code> (c2dm)</td><td>Declared by the notification library so a reminder you scheduled still fires when the phone is idle. The app sends no push messages and has no server.</td></tr>
 </table>
 </div>
 <p>
-  The app does not request access to your camera, microphone, precise location, photos, files,
-  call log or SMS messages. It does not request permission to modify your contacts.
+  That is the complete list. The app does not request access to your camera, microphone,
+  precise location, photos, files, call log or SMS messages, and it does not request
+  permission to modify your contacts.
+</p>
+<p>
+  Some permissions that Android libraries add by default were <strong>removed</strong> from
+  the shipped app because KinGlow does not use them: storage access
+  (<code>READ/WRITE_EXTERNAL_STORAGE</code>), drawing over other apps
+  (<code>SYSTEM_ALERT_WINDOW</code>), and the whole set of home-screen badge permissions.
 </p>
 
 <h2>Children</h2>
