@@ -153,14 +153,16 @@
 <table>
   <tr><th>Permission</th><th>Why</th></tr>
   <tr><td><code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code></td><td>Downloading advertisements. Nothing else in the app uses the network</td></tr>
-  <tr><td><code>AD_ID</code></td><td>Access to the advertising ID, used as described above</td></tr>
+  <tr><td><code>AD_ID</code>, <code>ACCESS_ADSERVICES_AD_ID</code>, <code>ACCESS_ADSERVICES_ATTRIBUTION</code>, <code>ACCESS_ADSERVICES_TOPICS</code></td><td>Access to the advertising ID and to Android&rsquo;s ad-measurement APIs, used by Google AdMob as described above. Added by the advertising library, not by the app itself</td></tr>
   <tr><td><code>POST_NOTIFICATIONS</code></td><td>Showing the daily reminders you set up. Only requested when you turn reminders on</td></tr>
   <tr><td><code>VIBRATE</code></td><td>The short buzz that accompanies a reminder</td></tr>
+  <tr><td><code>RECEIVE_BOOT_COMPLETED</code>, <code>WAKE_LOCK</code>, <code>FOREGROUND_SERVICE</code>, <code>READ_APP_BADGE</code></td><td>Delivering those reminders reliably: re-arming them after the phone restarts, waking the device at the time you chose, and showing the notification. They carry no data anywhere</td></tr>
 </table>
 </div>
 <p>
-  The app does not request access to your contacts, camera, microphone, precise
-  location, photos or files.
+  That is the complete list, read out of the released app bundle rather than
+  written from memory. The app does not request access to your contacts, camera,
+  microphone, precise location, photos or files.
 </p>
 
 <h2>Analytics and crash reporting</h2>
