@@ -90,6 +90,13 @@
   entries. Turning reminders off, or denying the notification permission, cancels
   them.
 </p>
+<p>
+  There is a second, optional notification: a weekly nudge, off by default, that
+  tells you your recent entries have started to show patterns. It says only
+  that &mdash; never which patterns, and never anything you wrote. It is
+  scheduled on your device like the reminders, and only while there is actually
+  something to look at.
+</p>
 
 <h2>Deleting your data</h2>
 <p>
@@ -154,7 +161,7 @@
   <tr><th>Permission</th><th>Why</th></tr>
   <tr><td><code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code></td><td>Downloading advertisements. Nothing else in the app uses the network</td></tr>
   <tr><td><code>AD_ID</code>, <code>ACCESS_ADSERVICES_AD_ID</code>, <code>ACCESS_ADSERVICES_ATTRIBUTION</code>, <code>ACCESS_ADSERVICES_TOPICS</code></td><td>Access to the advertising ID and to Android&rsquo;s ad-measurement APIs, used by Google AdMob as described above. Added by the advertising library, not by the app itself</td></tr>
-  <tr><td><code>POST_NOTIFICATIONS</code></td><td>Showing the daily reminders you set up. Only requested when you turn reminders on</td></tr>
+  <tr><td><code>POST_NOTIFICATIONS</code></td><td>Showing the reminders and the weekly nudge you set up. Only requested once you turn one of them on</td></tr>
   <tr><td><code>VIBRATE</code></td><td>The short buzz that accompanies a reminder</td></tr>
   <tr><td><code>RECEIVE_BOOT_COMPLETED</code>, <code>WAKE_LOCK</code>, <code>FOREGROUND_SERVICE</code>, <code>READ_APP_BADGE</code></td><td>Delivering those reminders reliably: re-arming them after the phone restarts, waking the device at the time you chose, and showing the notification. They carry no data anywhere</td></tr>
 </table>
