@@ -51,7 +51,7 @@
 <table>
   <tr><th>What</th><th>Why</th></tr>
   <tr><td>Your profile: the name you want to be called by, and which body map to show (male or female)</td><td>Greeting you, and drawing the right body map</td></tr>
-  <tr><td>Your symptoms: the body area and side, or an overall symptom such as fatigue, sleep, nausea or fever; an optional type (pain, stiffness, numbness or tingling); each severity rating from 1 to 5; an optional note; the time of day; the date and time you logged it; and whether the symptom is still active or has passed</td><td>The diary itself &mdash; your history, insights, patterns and report are built from these</td></tr>
+  <tr><td>Your symptoms: the body area and side, or an overall symptom such as fatigue, sleep, nausea or fever; an optional type (pain, stiffness, numbness or tingling); each severity rating from 0 to 5; an optional note; the time of day; the date and time you logged it; and whether the symptom is still active or has passed</td><td>The diary itself &mdash; your history, insights, patterns and report are built from these</td></tr>
   <tr><td>Daily check-ins: whether you marked a day as all good, or logged something that day</td><td>Counting good days and keeping your streak</td></tr>
   <tr><td>Your progress: experience points, level, current and longest streak, streak-freeze tokens and earned badges</td><td>Showing your progress in the app</td></tr>
   <tr><td>Your reminder settings: whether the daily reminder is on, and at what hour</td><td>Scheduling the reminder</td></tr>
@@ -152,10 +152,11 @@
 <div class="scroll">
 <table>
   <tr><th>Data</th><th>Purpose</th></tr>
-  <tr><td>Advertising ID (Android Advertising ID)</td><td>Limiting how often you see the same advertisement, measuring advertisement performance and preventing fraud</td></tr>
+  <tr><td>Device identifiers: the Android advertising ID and app set ID</td><td>Delivering advertisements, limiting how often you see the same one, measuring how advertisements perform, and preventing fraud</td></tr>
   <tr><td>Device information (model, operating system, language, screen size)</td><td>Selecting an advertisement that fits your device</td></tr>
   <tr><td>Approximate location, derived from your IP address</td><td>Serving region-appropriate advertisements and applying local law</td></tr>
-  <tr><td>Ad interaction data (views, clicks)</td><td>Measuring advertisement performance and preventing fraud</td></tr>
+  <tr><td>Interaction data: app launches, taps, and views of advertisements</td><td>Measuring advertisement performance and preventing fraud</td></tr>
+  <tr><td>Diagnostic data about the app and the advertising library, such as launch time and responsiveness</td><td>Keeping advertisements working reliably</td></tr>
 </table>
 </div>
 <p>
@@ -205,7 +206,7 @@
 </table>
 </div>
 <p>
-  That is the complete list, taken from the app&rsquo;s build rather than written
+  That is the complete list, read out of the release build rather than written
   from memory. The app does not request access to your contacts, camera,
   microphone, location, photos or files.
 </p>
