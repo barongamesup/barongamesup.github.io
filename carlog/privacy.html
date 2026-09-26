@@ -58,7 +58,7 @@
   <tr><td>Documents: type, title, an optional expiry date and note, and the photos or PDF files you attach</td><td>Keeping your papers with the vehicle they belong to, and reminding you before they expire</td></tr>
   <tr><td>Reminders: type, due date and/or due distance, how early to warn you, whether they repeat, and the hour of day for notifications</td><td>Scheduling the reminders</td></tr>
   <tr><td>Your progress: Garage Score, level, streak and earned badges</td><td>Showing your progress in the app</td></tr>
-  <tr><td>Settings: language, units, currency, theme, notification preferences and, if you turn it on, the folder you chose for automatic backups</td><td>Running the app the way you set it up</td></tr>
+  <tr><td>Settings: units, currency, theme, notification preferences and, if you turn it on, the folder you chose for automatic backups</td><td>Running the app the way you set it up</td></tr>
 </table>
 </div>
 <p>
@@ -115,8 +115,10 @@
 <p>
   Reminders can notify you when something is due &mdash; an oil change, an
   inspection, an insurance renewal, a document expiring. On Android 13 and later
-  your phone asks for permission to show notifications when you turn reminders
-  on; if you do not allow it, reminders only show inside the app.
+  your phone asks for permission to show notifications the first time you set a
+  reminder (or ask to be reminded about a document) or turn notifications on in
+  Settings &mdash; not when you install the app. If you do not allow it,
+  reminders only show inside the app.
 </p>
 <p>
   Notifications are scheduled <strong>locally on your phone</strong>. They are
@@ -145,12 +147,12 @@
 <h2>Advertising</h2>
 <p>
   CarLog is free and is funded by advertising. We use <strong>Google
-  AdMob</strong> to display a banner at the bottom of the <em>Timeline</em> and
-  of the fuel, service and expense entry screens, and an occasional full-screen
-  advertisement after you save an entry &mdash; never more than one per three
-  saved entries, at least three minutes apart, and at most five a day. Nothing
-  in the app is locked behind an advertisement, and no advertisement is shown
-  during setup or while you are entering data.
+  AdMob</strong> to display a banner at the bottom of the <em>Timeline</em>, and
+  an occasional full-screen advertisement after you save a fuel, service or
+  expense entry &mdash; never more than one for every three entries you save,
+  and at least three minutes apart. Nothing in the app is locked behind an
+  advertisement, and no advertisement is shown during setup or while you are
+  entering data.
 </p>
 <p>
   Nothing you record in the app is ever sent to our advertising provider or used
@@ -206,7 +208,7 @@
   <tr><th>Permission</th><th>Why</th></tr>
   <tr><td><code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code></td><td>Downloading advertisements. Nothing else in the app uses the network</td></tr>
   <tr><td><code>AD_ID</code>, <code>ACCESS_ADSERVICES_AD_ID</code>, <code>ACCESS_ADSERVICES_ATTRIBUTION</code>, <code>ACCESS_ADSERVICES_TOPICS</code></td><td>Access to the advertising ID and to Android&rsquo;s ad-measurement APIs, used by Google AdMob as described above. Added by the advertising library, not by the app itself</td></tr>
-  <tr><td><code>POST_NOTIFICATIONS</code></td><td>Showing reminder notifications. Requested when you turn reminders on</td></tr>
+  <tr><td><code>POST_NOTIFICATIONS</code></td><td>Showing reminder notifications. Requested the first time you set a reminder or turn notifications on, not at install</td></tr>
   <tr><td><code>VIBRATE</code></td><td>Letting a reminder vibrate, if your phone&rsquo;s notification settings call for it</td></tr>
   <tr><td><code>RECEIVE_BOOT_COMPLETED</code>, <code>WAKE_LOCK</code>, <code>FOREGROUND_SERVICE</code></td><td>Delivering reminders reliably: re-arming them after your phone restarts, and letting scheduled work finish while the screen is off. Added by the notification and advertising libraries. They carry no data anywhere</td></tr>
   <tr><td><code>READ_EXTERNAL_STORAGE</code>, <code>WRITE_EXTERNAL_STORAGE</code> (Android 12 and older only)</td><td>Opening the photo library to pick a photo, and reading or writing the files you choose. Not present on Android 13 and later, where the system pickers need no permission</td></tr>
