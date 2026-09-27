@@ -90,9 +90,12 @@
   You can add a growth photo, a cover photo or a photo to a check-in in two ways.
   <em>Choose from library</em> opens Android&rsquo;s photo picker: only the
   pictures you choose are handed to the app, and nothing else in your photo
-  library is read. <em>Take photo</em> opens the camera; the app asks for camera
-  permission at that moment, the first time you tap it, and not before. If you
-  refuse, you can still add photos from your library.
+  library is read. The picker needs no permission, so the app asks for none.
+  <em>Take photo</em> opens the camera; the app asks for camera permission at
+  that moment, the first time you tap it, and not before. On Android 9 and
+  older, Android also asks for storage access at that moment, which the camera
+  requires on those versions. If you refuse, you can still add photos from your
+  library.
 </p>
 <p>
   Each photo you add is re-saved as a new copy in the app&rsquo;s private
@@ -253,9 +256,11 @@
   <tr><td><code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code></td><td>Downloading advertisements. Nothing else in the app uses the network</td></tr>
   <tr><td><code>AD_ID</code>, <code>ACCESS_ADSERVICES_AD_ID</code>, <code>ACCESS_ADSERVICES_ATTRIBUTION</code>, <code>ACCESS_ADSERVICES_TOPICS</code></td><td>Access to the advertising ID and to Android&rsquo;s ad-measurement APIs, used by Google AdMob as described above. Added by the advertising library, not by the app itself</td></tr>
   <tr><td><code>CAMERA</code></td><td>Taking a photo of a plant. Requested the first time you tap <em>Take photo</em>, not at install. Never used for anything else</td></tr>
+  <tr><td><code>READ_EXTERNAL_STORAGE</code>, <code>WRITE_EXTERNAL_STORAGE</code></td><td>Declared for Android 12 and older only; Android 13 and later never ask for them. On Android 9 and older the camera requires storage access alongside camera permission, so Android asks for both the first time you tap <em>Take photo</em>. Used only to receive the photo you take; the app never reads or writes your other files</td></tr>
   <tr><td><code>POST_NOTIFICATIONS</code></td><td>Showing the daily digest and, if you turn it on, the streak reminder. Requested after you add your first plant or from <em>Settings &rarr; Notifications</em>, not at install</td></tr>
   <tr><td><code>VIBRATE</code></td><td>Letting a notification vibrate, if your phone&rsquo;s notification settings call for it</td></tr>
-  <tr><td><code>RECEIVE_BOOT_COMPLETED</code>, <code>WAKE_LOCK</code>, <code>FOREGROUND_SERVICE</code></td><td>Delivering notifications reliably: re-arming them after your phone restarts, and letting scheduled work finish while the screen is off. Added by the notification and advertising libraries. They carry no data anywhere</td></tr>
+  <tr><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>Re-arming your scheduled notifications after your phone restarts. Added by the notification library. It carries no data anywhere</td></tr>
+  <tr><td><code>WAKE_LOCK</code>, <code>FOREGROUND_SERVICE</code></td><td>Letting background work finish while the screen is off. Added by the advertising library and the Android work scheduler it uses. They carry no data of yours anywhere</td></tr>
   <tr><td><code>com.google.android.c2dm.permission.RECEIVE</code></td><td>Added by the notification library so that apps can receive push messages. Soil First never registers for push messages, so nothing is ever received through it</td></tr>
   <tr><td><code>READ_APP_BADGE</code>, the launcher shortcut permissions, and the launcher-badge permissions of several phone makers (Samsung, Huawei, OPPO, HTC, Sony and others)</td><td>Added by the notification library so that apps can show a number on their icon. Soil First never sets one</td></tr>
   <tr><td><code>BIND_GET_INSTALL_REFERRER_SERVICE</code></td><td>Added by a system library that can tell an app how it was installed. Soil First never reads it</td></tr>
@@ -264,10 +269,11 @@
 </div>
 <p>
   That list is read out of the app&rsquo;s build rather than written from memory,
-  and is checked again against each release. The app does not request access to
-  your files, contacts, microphone or location; photos reach it only through
-  Android&rsquo;s photo picker or the camera, and backups only through the share
-  sheet and file picker.
+  and is checked again against each release. Apart from the storage access the
+  camera needs on Android 9 and older, the app does not request access to your
+  files, and it never asks for your contacts, microphone or location; photos
+  reach it only through Android&rsquo;s photo picker or the camera, and backups
+  only through the share sheet and file picker.
 </p>
 
 <h2>Analytics and crash reporting</h2>
